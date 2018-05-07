@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using Moq;
 using Ninject;
 using MiniPriceCalculator.Domain.Abstract;
+using MiniPriceCalculator.Domain.Concrete;
 using MiniPriceCalculator.Domain.Entities;
 
 namespace MiniPriceCalculator.WebUI.Infrastructure
@@ -31,7 +32,7 @@ namespace MiniPriceCalculator.WebUI.Infrastructure
 
         private void AddBindings()
         {
-            //kernel.Bind<IProductsRepository>().To<EFProductRepository>();
+            kernel.Bind<IProductRepository>().To<EFProductRepository>();
         }
     }
 }

@@ -1,7 +1,7 @@
-[assembly: WebActivator.PreApplicationStartMethod(typeof(MiniPriceCalculator.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(MiniPriceCalculator.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivator.PreApplicationStartMethod(typeof(MiniPriceCalculator.WebUI.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivator.ApplicationShutdownMethodAttribute(typeof(MiniPriceCalculator.WebUI.App_Start.NinjectWebCommon), "Stop")]
 
-namespace MiniPriceCalculator.App_Start
+namespace MiniPriceCalculator.WebUI.App_Start
 {
     using System;
     using System.Web;
