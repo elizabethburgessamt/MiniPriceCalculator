@@ -31,7 +31,7 @@ namespace MiniPriceCalculator.Domain.Entities
             lineCollection.RemoveAll(l => l.Product.ProductID == product.ProductID);
         }
 
-        public decimal ComputTotalValue()
+        public decimal ComputeTotalValue()
         {
             return lineCollection.Sum(e => e.Product.Price * e.Quantity);
         }
