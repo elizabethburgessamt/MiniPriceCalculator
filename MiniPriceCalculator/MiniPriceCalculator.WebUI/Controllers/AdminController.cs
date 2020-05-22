@@ -43,5 +43,21 @@ namespace MiniPriceCalculator.Controllers
                 return View(product);
             }
         }
+
+        public ViewResult Create()
+        {
+            return View("Edit", new Product());
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int productID)
+        {
+            Product deletedProduct = repository.DeleteProduct(productID);
+            if (deletedProduct != null)
+            {
+                TempData["message"] = string.Format("{0} was deleted.", deletedProduct.Name);
+            }
+            return RedirectToAction("Index");
+        }
     }
 }
