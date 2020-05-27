@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using MiniPriceCalculator.Domain.Abstract;
 using MiniPriceCalculator.Domain.Entities;
 
-namespace MiniPriceCalculator.Controllers
+namespace MiniPriceCalculator.WebUI.Controllers
 {
     public class AdminController : Controller
     {
