@@ -7,6 +7,9 @@ using Ninject;
 using MiniPriceCalculator.Domain.Abstract;
 using MiniPriceCalculator.Domain.Concrete;
 using MiniPriceCalculator.Domain.Entities;
+using MiniPriceCalculator.WebUI.Infrastructure.Abstract;
+using MiniPriceCalculator.WebUI.Infrastructure.Concrete;
+using System.Web.ClientServices.Providers;
 
 namespace MiniPriceCalculator.WebUI.Infrastructure
 {
@@ -40,6 +43,8 @@ namespace MiniPriceCalculator.WebUI.Infrastructure
             };
 
             kernel.Bind<IOrderProcessor>().To<EmailOrderProcessor>().WithConstructorArgument("settings", emailSettings);
+
+            kernel.Bind<IAuthProvider>().To<FormsAuthProvider>();
         }
     }
 }

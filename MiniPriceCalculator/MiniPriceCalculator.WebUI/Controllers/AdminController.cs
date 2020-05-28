@@ -8,6 +8,7 @@ using MiniPriceCalculator.Domain.Entities;
 
 namespace MiniPriceCalculator.WebUI.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         private IProductRepository repository;
