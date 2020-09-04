@@ -19,7 +19,7 @@ namespace MiniPriceCalculator.Domain.Concrete
 
         public void SaveProduct(Product product)
         {
-            if (product.ProductID < 0)
+            if (product.ProductID <= 0)
             {
                 context.Products.Add(product);
             }
