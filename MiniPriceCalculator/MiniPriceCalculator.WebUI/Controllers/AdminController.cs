@@ -30,6 +30,11 @@ namespace MiniPriceCalculator.WebUI.Controllers
             return View(product);
         }
 
+        public ViewResult Products()
+        {
+            return View(repository.Products);
+        }
+
         [HttpPost]
         public ActionResult Edit(Product product, HttpPostedFileBase image = null)
         {
@@ -43,7 +48,7 @@ namespace MiniPriceCalculator.WebUI.Controllers
                 }
                 repository.SaveProduct(product);
                 TempData["message"] = string.Format("{0} has been saved", product.Name);
-                return RedirectToAction("Index");
+                return RedirectToAction("Products");
             }
             else
             {
@@ -64,7 +69,7 @@ namespace MiniPriceCalculator.WebUI.Controllers
             {
                 TempData["message"] = string.Format("{0} was deleted.", deletedProduct.Name);
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Products");
         }
     }
 }
